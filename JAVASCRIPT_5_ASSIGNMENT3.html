@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta charset ="UTF-8">
+        <meta name="viewport" width="device-width initial-scale=1.0">
+        <title>Inheritance in Javascript</title>
+    </head>
+    <body>
+        <script>
+            class Dog{
+                constructor(name){
+                    this.name = name;
+                }               
+
+                speak(){
+                    return 'Woof';
+                }
+            }
+            var dogObj = new Dog('Bunny');
+            console.log(dogObj.speak());
+            console.log(dogObj.name);
+
+            class Labrador extends Dog{
+                constructor(name,color,breedWeight){
+                    super(name);
+                    this.color = color;
+                    this.breedWeight = breedWeight;
+                }               
+
+                speak(){
+                    super.speak();
+                    return "Labrador says woof";
+                }
+
+            }
+
+            var labObj = new Labrador('Labrador','black',50);
+            console.log(labObj.speak());
+            console.log(labObj.name);
+            console.log(labObj.color);
+            console.log(labObj.breedWeight);
+        </script>
+    </body>
+</html>
